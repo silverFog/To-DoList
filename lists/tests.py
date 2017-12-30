@@ -26,6 +26,7 @@ class HomePageTest(TestCase):
     def test_only_saves_when_neccessary(self):
         self.client.get('/')
         self.assertEqual(Item.objects.count(), 0)
+        
 class ListViewTest(TestCase):
     
     def test_uses_list_template(self):
