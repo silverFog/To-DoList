@@ -5,6 +5,7 @@ import time
 
 from selenium.common.exceptions import WebDriverException
 MAX_WAIT = 10
+
 class NewVisitorTest(LiveServerTestCase):
     
     def setUp(self):
@@ -104,7 +105,7 @@ class NewVisitorTest(LiveServerTestCase):
         inputbox = self.browser.find_element_by_id('id_new_item')
         inputbox.send_keys('Buy milk')
         inputbox.send_keys(Keys.ENTER)
-        self.wait_for_row_in_list_tables('1: Buy milk')
+        self.wait_for_row_in_list_table('1: Buy milk')
         
         # Francis gets his own unique URL
         francis_list_url = self.browser.current_url       
@@ -113,6 +114,7 @@ class NewVisitorTest(LiveServerTestCase):
 
         # Again, there is no trace of Edith's list
         page_text = self.browser.find_element_by_tag_name('body').text        
+        self.assertNotIn('Buy peacock feathers', page_text)
         self.assertIn('Buy milk', page_text)
         
         # Satisfied they both go back to sleep
