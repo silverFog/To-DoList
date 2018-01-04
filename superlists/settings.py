@@ -26,7 +26,8 @@ SECRET_KEY = '#)$6=sc9!4@o#3^0ukqv591oy)az#%m200*pqrwz8gu%%j_@ws'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '159.89.176.151'
+    '159.89.176.151',
+    'noevillela.com'
 ]
 
 
