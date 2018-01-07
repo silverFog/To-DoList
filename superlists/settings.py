@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '159.89.176.151',
-    'noevillela.com'
+    'noevillela.com',
+    'localhost:8000',
 ]
 
 
