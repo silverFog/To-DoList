@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
     '159.89.176.151',
     'noevillela.com',
     'localhost',
+    'list-staging.noevillela.com',
 ]
 
 
