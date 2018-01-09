@@ -1,0 +1,19 @@
+[Unit]
+Description=Gunicorn server for DOMAIN
+
+[Service]
+Restart=on-failure
+User=noah
+WorkingDirectory=/home/noah/sites/DOMAIN
+
+Environment=DJANGO_DEBUG_FALSE=y
+Environment=DJANGO_SECRET_KEY="ytymsxe117t*_4_tllp(kv)b(420^wwcx4r1oa7166(^f4e+h4
+"
+Environment=SITENAME=DOMAIN
+
+ExectStart=/home/noah/sites/DOMAIN/virtualenv/bin/gunicorn \
+    --bind unix:/tmp/DOMAIN.socket \
+    superlists.wsgi:application
+    
+[Install]
+WantedBy=multi-user.target
